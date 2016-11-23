@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let layout = ViewController()
+        let layout = MessagesController()
         window?.rootViewController = UINavigationController(rootViewController: layout)
         
 

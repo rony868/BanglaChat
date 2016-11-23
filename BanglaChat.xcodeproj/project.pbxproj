@@ -12,6 +12,9 @@
 		442AE0931DE320CD00B23593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442AE0911DE320CD00B23593 /* Main.storyboard */; };
 		442AE0951DE320CD00B23593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442AE0941DE320CD00B23593 /* Assets.xcassets */; };
 		442AE0981DE320CD00B23593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442AE0961DE320CD00B23593 /* LaunchScreen.storyboard */; };
+		442AE0A11DE3248E00B23593 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AE0A01DE3248E00B23593 /* LoginController.swift */; };
+		44F242611DE41503008FDF8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44F242601DE41503008FDF8F /* GoogleService-Info.plist */; };
+		907CAB0865E7EC715B9BCDBD /* Pods_BanglaChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EABFCB50598C6FACEADA63 /* Pods_BanglaChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		442AE0941DE320CD00B23593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		442AE0971DE320CD00B23593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		442AE0991DE320CD00B23593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442AE0A01DE3248E00B23593 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		44F242601DE41503008FDF8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		894A6FCABDDB917D3DE9769B /* Pods-BanglaChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanglaChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanglaChat/Pods-BanglaChat.debug.xcconfig"; sourceTree = "<group>"; };
+		A5EABFCB50598C6FACEADA63 /* Pods_BanglaChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BanglaChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2254D3F0ED300B5754874C8 /* Pods-BanglaChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanglaChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-BanglaChat/Pods-BanglaChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907CAB0865E7EC715B9BCDBD /* Pods_BanglaChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				442AE08C1DE320CD00B23593 /* BanglaChat */,
 				442AE08B1DE320CD00B23593 /* Products */,
+				F77F67D64EF37680E0848DEE /* Pods */,
+				F84D407115780B59646BD474 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,41 @@
 		442AE08C1DE320CD00B23593 /* BanglaChat */ = {
 			isa = PBXGroup;
 			children = (
+				442AE09F1DE3244A00B23593 /* Controller */,
 				442AE08D1DE320CD00B23593 /* AppDelegate.swift */,
-				442AE08F1DE320CD00B23593 /* ViewController.swift */,
 				442AE0911DE320CD00B23593 /* Main.storyboard */,
 				442AE0941DE320CD00B23593 /* Assets.xcassets */,
 				442AE0961DE320CD00B23593 /* LaunchScreen.storyboard */,
+				44F242601DE41503008FDF8F /* GoogleService-Info.plist */,
 				442AE0991DE320CD00B23593 /* Info.plist */,
 			);
 			path = BanglaChat;
+			sourceTree = "<group>";
+		};
+		442AE09F1DE3244A00B23593 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				442AE08F1DE320CD00B23593 /* ViewController.swift */,
+				442AE0A01DE3248E00B23593 /* LoginController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F77F67D64EF37680E0848DEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				894A6FCABDDB917D3DE9769B /* Pods-BanglaChat.debug.xcconfig */,
+				B2254D3F0ED300B5754874C8 /* Pods-BanglaChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F84D407115780B59646BD474 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5EABFCB50598C6FACEADA63 /* Pods_BanglaChat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 442AE09C1DE320CD00B23593 /* Build configuration list for PBXNativeTarget "BanglaChat" */;
 			buildPhases = (
+				FF9F15266C2AF6B3F163FA80 /* [CP] Check Pods Manifest.lock */,
 				442AE0861DE320CC00B23593 /* Sources */,
 				442AE0871DE320CC00B23593 /* Frameworks */,
 				442AE0881DE320CC00B23593 /* Resources */,
+				B439F2AA681CA23907A1A8A9 /* [CP] Embed Pods Frameworks */,
+				17F5E2A7B6DBB6F2C31BB6CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F242611DE41503008FDF8F /* GoogleService-Info.plist in Resources */,
 				442AE0981DE320CD00B23593 /* LaunchScreen.storyboard in Resources */,
 				442AE0951DE320CD00B23593 /* Assets.xcassets in Resources */,
 				442AE0931DE320CD00B23593 /* Main.storyboard in Resources */,
@@ -131,12 +173,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17F5E2A7B6DBB6F2C31BB6CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BanglaChat/Pods-BanglaChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B439F2AA681CA23907A1A8A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BanglaChat/Pods-BanglaChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF9F15266C2AF6B3F163FA80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		442AE0861DE320CC00B23593 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				442AE0901DE320CD00B23593 /* ViewController.swift in Sources */,
+				442AE0A11DE3248E00B23593 /* LoginController.swift in Sources */,
 				442AE08E1DE320CD00B23593 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +349,7 @@
 		};
 		442AE09D1DE320CD00B23593 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 894A6FCABDDB917D3DE9769B /* Pods-BanglaChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BanglaChat/Info.plist;
@@ -270,6 +362,7 @@
 		};
 		442AE09E1DE320CD00B23593 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2254D3F0ED300B5754874C8 /* Pods-BanglaChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BanglaChat/Info.plist;
@@ -299,6 +392,7 @@
 				442AE09E1DE320CD00B23593 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

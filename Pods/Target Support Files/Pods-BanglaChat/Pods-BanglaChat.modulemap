@@ -1,0 +1,6 @@
+framework module Pods_BanglaChat {
+  umbrella header "Pods-BanglaChat-umbrella.h"
+
+  export *
+  module * { export * }
+}

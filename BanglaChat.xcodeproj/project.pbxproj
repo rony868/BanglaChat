@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44065EBC1DE6D74600453CFE /* LoginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44065EBB1DE6D74600453CFE /* LoginController+handlers.swift */; };
 		442AE08E1DE320CD00B23593 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AE08D1DE320CD00B23593 /* AppDelegate.swift */; };
 		442AE0901DE320CD00B23593 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AE08F1DE320CD00B23593 /* MessagesController.swift */; };
 		442AE0931DE320CD00B23593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442AE0911DE320CD00B23593 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44065EBB1DE6D74600453CFE /* LoginController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+handlers.swift"; sourceTree = "<group>"; };
 		442AE08A1DE320CD00B23593 /* BanglaChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanglaChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442AE08D1DE320CD00B23593 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		442AE08F1DE320CD00B23593 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44065EBD1DE6F64F00453CFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44A0F1581DE5F9D7005AA969 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		442AE0811DE320CC00B23593 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		442AE08C1DE320CD00B23593 /* BanglaChat */ = {
 			isa = PBXGroup;
 			children = (
+				44065EBD1DE6F64F00453CFE /* Model */,
 				442AE09F1DE3244A00B23593 /* Controller */,
 				442AE08D1DE320CD00B23593 /* AppDelegate.swift */,
 				442AE0911DE320CD00B23593 /* Main.storyboard */,
@@ -84,9 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				44E396BD1DE5B08A00DAF868 /* NewMessageController.swift */,
-				44A0F1581DE5F9D7005AA969 /* User.swift */,
 				442AE08F1DE320CD00B23593 /* MessagesController.swift */,
 				442AE0A01DE3248E00B23593 /* LoginController.swift */,
+				44065EBB1DE6D74600453CFE /* LoginController+handlers.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			files = (
 				44E396BE1DE5B08A00DAF868 /* NewMessageController.swift in Sources */,
 				442AE0901DE320CD00B23593 /* MessagesController.swift in Sources */,
+				44065EBC1DE6D74600453CFE /* LoginController+handlers.swift in Sources */,
 				442AE0A11DE3248E00B23593 /* LoginController.swift in Sources */,
 				44A0F1591DE5F9D7005AA969 /* User.swift in Sources */,
 				442AE08E1DE320CD00B23593 /* AppDelegate.swift in Sources */,

@@ -59,6 +59,9 @@ class NewMessageController: UITableViewController {
         let user = users[indexPath.row]
         cell.textLabel?.text = user.name as! String?
         cell.detailTextLabel?.text = user.email
+        
+        cell.imageView?.image = UIImage(named: "profileImage")
+        
         return cell
         
     }

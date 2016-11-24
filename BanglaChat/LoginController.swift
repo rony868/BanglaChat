@@ -69,43 +69,6 @@ class LoginController: UIViewController {
     
     }
     
-    // Register Button Handler function
-    func handleRegister(){
-        guard let name = nameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else{
-        
-            print("Form is not valid")
-            return
-        }
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {
-            
-            (user: FIRUser?, error) in
-            if error != nil{
-            print(error)
-                return
-            }
-            
-            //successfully authenticated user
-            
-            guard let uid = user?.uid else{
-                return
-            }
-            
-            let ref = FIRDatabase.database().reference(fromURL: "https://banglachat-197b2.firebaseio.com/")
-            let usersReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
-            usersReference.updateChildValues(values, withCompletionBlock: {(err, ref) in
-                if err != nil {
-                    print(err)
-                    return
-                }
-            
-                self.dismiss(animated: true, completion: nil)
-            })
-
-    
-    })
-}
     let nameTextField: UITextField = {
         
         let tf = UITextField()
@@ -152,11 +115,14 @@ class LoginController: UIViewController {
         
     }()
     
-    let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "profileImage")
         imageView.layer.cornerRadius = 75
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectorProfileImageView)))
+        imageView.isUserInteractionEnabled = true
+        
         return imageView
     }()
     

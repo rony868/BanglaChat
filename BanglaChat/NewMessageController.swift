@@ -20,6 +20,8 @@ class NewMessageController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         
+        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
+        
         fetchUser()
         
     }
@@ -32,14 +34,17 @@ class NewMessageController: UITableViewController {
                 
                 user.setValuesForKeys(dictionary)
                 self.users.append(user)
-                self.tableView.reloadData()
-
-            
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    self.tableView.reloadData()
+                    
+                })
+                
             }
-
             
-            }, withCancel: nil)
-    
+        }, withCancel: nil)
+        
     }
     
     func handleCancel(){
@@ -49,18 +54,38 @@ class NewMessageController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
-        
-        //let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
         
         let user = users[indexPath.row]
         cell.textLabel?.text = user.name as! String?
         cell.detailTextLabel?.text = user.email
         
-        cell.imageView?.image = UIImage(named: "profileImage")
+        if let profileImageUrl = user.profileImageUrl {
+            
+            let url = NSURL(string: profileImageUrl)
+            
+            URLSession.shared.dataTask(with: url as! URL, completionHandler: { (data, response, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    cell.profileImageView.image = UIImage(data: data!)
+                    
+                })
+                
+                
+                
+            }).resume()
+            
+        }
         
         return cell
         
@@ -69,8 +94,37 @@ class NewMessageController: UITableViewController {
 }
 
 class UserCell: UITableViewCell {
-   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        textLabel?.frame = CGRect(x: 56, y: (textLabel?.frame.origin.y)! - 2, width: (textLabel?.frame.width)!, height: (textLabel?.frame.height)!)
+        detailTextLabel?.frame = CGRect(x: 56, y: (detailTextLabel?.frame.origin.y)! + 2, width: (detailTextLabel?.frame.width)!, height: (detailTextLabel?.frame.height)!)
+    }
+    
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "profileImage")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 20
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        
+        return imageView
+        
+    }()
+    
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        
+        addSubview(profileImageView)
+        
+        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError()

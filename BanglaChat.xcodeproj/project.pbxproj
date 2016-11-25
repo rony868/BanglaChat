@@ -16,6 +16,7 @@
 		442AE0A11DE3248E00B23593 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442AE0A01DE3248E00B23593 /* LoginController.swift */; };
 		44A0F1591DE5F9D7005AA969 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A0F1581DE5F9D7005AA969 /* User.swift */; };
 		44E396BE1DE5B08A00DAF868 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E396BD1DE5B08A00DAF868 /* NewMessageController.swift */; };
+		44F207CF1DE809FF007D7800 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F207CE1DE809FF007D7800 /* Extensions.swift */; };
 		44F242611DE41503008FDF8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44F242601DE41503008FDF8F /* GoogleService-Info.plist */; };
 		907CAB0865E7EC715B9BCDBD /* Pods_BanglaChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EABFCB50598C6FACEADA63 /* Pods_BanglaChat.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		442AE0A01DE3248E00B23593 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		44A0F1581DE5F9D7005AA969 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		44E396BD1DE5B08A00DAF868 /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		44F207CE1DE809FF007D7800 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		44F242601DE41503008FDF8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		894A6FCABDDB917D3DE9769B /* Pods-BanglaChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanglaChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanglaChat/Pods-BanglaChat.debug.xcconfig"; sourceTree = "<group>"; };
 		A5EABFCB50598C6FACEADA63 /* Pods_BanglaChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BanglaChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 		442AE08C1DE320CD00B23593 /* BanglaChat */ = {
 			isa = PBXGroup;
 			children = (
+				44F207CD1DE809D1007D7800 /* Helpers */,
 				44065EBD1DE6F64F00453CFE /* Model */,
 				442AE09F1DE3244A00B23593 /* Controller */,
 				442AE08D1DE320CD00B23593 /* AppDelegate.swift */,
@@ -100,6 +103,14 @@
 				44065EBB1DE6D74600453CFE /* LoginController+handlers.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		44F207CD1DE809D1007D7800 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				44F207CE1DE809FF007D7800 /* Extensions.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		F77F67D64EF37680E0848DEE /* Pods */ = {
@@ -249,6 +260,7 @@
 				442AE0A11DE3248E00B23593 /* LoginController.swift in Sources */,
 				44A0F1591DE5F9D7005AA969 /* User.swift in Sources */,
 				442AE08E1DE320CD00B23593 /* AppDelegate.swift in Sources */,
+				44F207CF1DE809FF007D7800 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
